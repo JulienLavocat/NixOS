@@ -1,14 +1,13 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
   ];
 
   nix = {
@@ -54,6 +53,11 @@
     xkbVariant = "azerty";
   };
 
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  };
+
   # Configure console keymap
   console.keyMap = "fr";
 
@@ -67,6 +71,11 @@
 
   # Enable automatic login for the user.
   services.getty.autologinUser = "julien";
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {"julien" = import ./home.nix;};
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
