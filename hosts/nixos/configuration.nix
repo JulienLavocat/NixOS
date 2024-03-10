@@ -78,6 +78,9 @@
     nvidiaSettings = true;
   };
 
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.julien = {
     isNormalUser = true;
@@ -108,6 +111,7 @@
     zip
     tmux
     alejandra
+    zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
