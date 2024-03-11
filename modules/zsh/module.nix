@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  home.packages = with pkgs; [
+    zsh
+    zsh-powerlevel10k
+  ];
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;

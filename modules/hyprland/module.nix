@@ -4,8 +4,23 @@
     ${pkgs.swww}/bin/swww init &
   '';
 in {
-  options = {};
   config = {
+    home.packages = with pkgs; [
+      hyprland
+      waybar
+      dunst
+      libnotify
+      swww
+      rofi-wayland
+      grim
+      slurp
+      wl-clipboard
+      networkmanagerapplet
+      krusader
+      cliphist
+      font-awesome
+    ];
+
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
