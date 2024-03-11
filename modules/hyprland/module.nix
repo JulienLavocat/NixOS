@@ -39,6 +39,13 @@ in {
           "$mod, R, exec, $menu"
           "$mod, P, pseudo"
           "$mod, J, togglesplit"
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ];
+
+        # binde = bind + e flag = repeat keys (https://wiki.hyprland.org/Configuring/Binds/#bind-flags)
+        binde = [
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"
         ];
 
         input = {
