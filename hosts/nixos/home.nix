@@ -11,6 +11,7 @@
     ../../modules/git/module.nix
     ../../modules/btop/module.nix
     ../../modules/neovim/module.nix
+    ../../modules/firefox/module.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -25,7 +26,6 @@
 
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["FiraCode"];})
-      firefox
       discord
       spotify
     ];
