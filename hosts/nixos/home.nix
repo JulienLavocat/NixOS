@@ -7,7 +7,7 @@
     ../../modules/home-manager/hyprland.nix
   ];
 
-  # users.users.julien.shell = pkgs.zsh;
+  fonts.fontconfig.enableProfileFonts = true;
 
   home = {
     username = "julien";
@@ -24,11 +24,32 @@
       go
       ripgrep
       lazygit
+      waybar
+      dunst
+      libnotify
+      swww
+      alacritty
+      rofi-wayland
+      firefox
+      grim
+      slurp
+      wl-clipboard
+      networkmanagerapplet
+      discord
+      spotify
+      krusader
+      cliphist
+      btop
+      volta
+      font-awesome
+      (nerdfonts.override {fonts = ["FiraCode"];})
     ];
   };
 
   programs = {
-    home-manager.enable = true;
+    home-manager = {
+      enable = true;
+    };
 
     zsh = {
       enable = true;
@@ -56,6 +77,14 @@
       enable = true;
       userName = "Julien Lavocat";
       userEmail = "julien.lavocat@gmail.com";
+    };
+
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "gruvbox_dark_v2";
+        vim_keys = true;
+      };
     };
   };
 }

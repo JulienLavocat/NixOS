@@ -15,6 +15,11 @@
     settings.experimental-features = ["nix-command" "flakes"];
   };
 
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -94,6 +99,7 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
+    useGlobalPkgs = true;
     users = {"julien" = import ./home.nix;};
   };
 
