@@ -1,4 +1,9 @@
-{lib, ...}: {
+{pkgs, ...}: let
+  startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+    ${pkgs.waybar}/bin/waybar &
+    ${pkgs.swww}/bin/swww init &
+  '';
+in {
   options = {};
   config = {
     wayland.windowManager.hyprland = {
@@ -25,6 +30,8 @@
           kb_layout = "fr";
           kb_variant = "azerty";
         };
+
+        exec-once = ''${startupScript}/bin/start'';
       };
     };
   };

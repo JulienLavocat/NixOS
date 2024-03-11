@@ -64,8 +64,10 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "fr";
-    xkbVariant = "azerty";
+    xkb = {
+      layout = "fr";
+      variant = "azerty";
+    };
   };
 
   programs.hyprland = {
