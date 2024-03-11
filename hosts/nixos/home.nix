@@ -5,9 +5,11 @@
 }: {
   imports = [
     ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/tmux.nix
+    ../../modules/home-manager/alacritty/alacritty.nix
   ];
 
-  fonts.fontconfig.enableProfileFonts = true;
+  fonts.fontconfig.enable = true;
 
   home = {
     username = "julien";
