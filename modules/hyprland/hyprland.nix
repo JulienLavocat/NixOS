@@ -2,6 +2,7 @@
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.swww}/bin/swww init &
+    ${pkgs.wl-clipboard}/bin/wl-paste --watch cliphist store
   '';
 in {
   home.packages = with pkgs; [hyprland];
@@ -20,10 +21,11 @@ in {
         "$mod, Q, exec, $terminal"
         "$mod, C, killactive"
         "$mod, E, exec, $fileManager"
-        "$mod, V, togglefloating"
+        "$mod, K, togglefloating"
         "$mod, R, exec, $menu"
         "$mod, P, pseudo"
         "$mod, J, togglesplit"
+        "$mod, V, exec, cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"
 
         # Move focus
         "$mod, left, movefocus, l"
