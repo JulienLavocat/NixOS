@@ -1,13 +1,12 @@
 {pkgs, ...}: {
   imports = [
     ./waybar.nix
+    ./dunst.nix
     ./hyprland.nix
   ];
 
   config = {
     home.packages = with pkgs; [
-      dunst
-      libnotify
       swww
       rofi-wayland
       grim
