@@ -1,4 +1,6 @@
-{...}: {
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [playerctl];
+
   sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
