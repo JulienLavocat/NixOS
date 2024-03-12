@@ -84,6 +84,7 @@ in {
       input = {
         kb_layout = "fr";
         kb_variant = "azerty";
+        numlock_by_default = true;
       };
 
       general = {
