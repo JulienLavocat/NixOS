@@ -2,7 +2,17 @@
   home.packages = with pkgs; [
     waybar
     font-awesome
+    python3
+    gobject-introspection
+    python3Packages.pygobject3
   ];
+
+  home.file = {
+    ".config/waybar/mediaplayer.py" = {
+      source = ./mediaplayer.py;
+      executable = true;
+    };
+  };
 
   programs.waybar = {
     enable = true;
@@ -14,8 +24,7 @@
 
         modules-left = [
           "hyprland/workspaces"
-          "hyprland/mode"
-          "hyprland/scratchpad"
+          "hyprland/submap"
           "custom/media"
         ];
 
@@ -24,8 +33,6 @@
         ];
 
         modules-right = [
-          "mpd"
-          "idle_inhibitor"
           "pulseaudio"
           "network"
           "power-profiles-daemon"
@@ -33,8 +40,6 @@
           "memory"
           "temperature"
           "backlight"
-          "keyboard-state"
-          "hyprland/language"
           "battery"
           "battery#bat2"
           "clock"
@@ -51,37 +56,8 @@
           };
         };
 
-        "hyprland/mode" = {
+        "hyprland/submap" = {
           format = "<span style=\"italic\">{}</span>";
-        };
-
-        "hyprland/scratchpad" = {
-          format = "{icon} {count}";
-          show-empty = false;
-          format-icons = ["" ""];
-          tooltip = true;
-          tooltip-format = "{app}: {title}";
-        };
-
-        mpd = {
-          format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
-          format-disconnected = "Disconnected ";
-          format-stopped = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
-          unknown-tag = "N/A";
-          interval = 5;
-          consume-icons = {on = " ";};
-          random-icons = {
-            off = "<span color=\"#f53c3c\"></span> ";
-            on = " ";
-          };
-          repeat-icons = {on = " ";};
-          single-icons = {on = "1 ";};
-          state-icons = {
-            paused = "";
-            playing = "";
-          };
-          tooltip-format = "MPD (connected)";
-          tooltip-format-disconnected = "MPD (disconnected)";
         };
 
         idle_inhibitor = {
@@ -150,7 +126,7 @@
 
         network = {
           format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ipaddr}/{cidr} ";
+          format-ethernet = "";
           tooltip-format = "{ifname} via {gwaddr} ";
           format-linked = "{ifname} (No IP) ";
           format-disconnected = "Disconnected ⚠";
@@ -185,7 +161,7 @@
             default = "🎜";
           };
           escape = true;
-          exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
+          exec = "$HOME/.config/waybar/mediaplayer.py";
         };
       }
     ];
