@@ -23,7 +23,7 @@
     '';
 
     shellAliases = {
-      rebuild = "alejandra /etc/nixos && sudo nixos-rebuild switch --flake /etc/nixos";
+      rebuild = "git add -A && alejandra /etc/nixos && sudo nixos-rebuild switch --flake /etc/nixos";
       editnix = "cd /etc/nixos && nvim && alejandra .";
       edithypr = "nvim ~/.config/hypr/hyprland.conf";
       editnvim = "cd ~/.config/nvim && nvim";
