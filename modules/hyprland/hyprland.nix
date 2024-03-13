@@ -4,6 +4,25 @@
     ${pkgs.swww}/bin/swww init &
     ${pkgs.wl-clipboard}/bin/wl-paste --watch cliphist store
   '';
+
+  powerScript = pkgs.pkgs.writeShellScriptBin "power-manager" ''
+    entries="󰗽 Logout\n󰒲 Suspend\n󰜉 Reboot\n󰐥 Shutdown"
+
+    selected=$(echo -e $entries | rofi -dmenu | awk '{print tolower($2)}')
+
+    case "$selected" in
+    logout)
+      #pkill -u $USER;;
+      echo "Sorry, this one is bugged, see todo list #4 for fix. Please fix it ASAP :)";;
+    suspend)
+      # exec systemctl suspend;;
+      echo "Sorry, this one is bugged, see todo list #4 for fix. Please fix it ASAP :)";;
+    reboot)
+      exec systemctl reboot;;
+    shutdown)
+      exec systemctl poweroff;;
+    esac
+  '';
 in {
   home.packages = with pkgs; [hyprland];
 
@@ -14,6 +33,7 @@ in {
       "$terminal" = "alacritty";
       "$fileManager" = "krusader";
       "$menu" = "rofi -show drun -show-icons";
+      "$clipboardHistory" = "cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy";
 
       bind = [
         "$mod, F, exec, firefox"
@@ -25,7 +45,8 @@ in {
         "$mod, R, exec, $menu"
         "$mod, P, pseudo"
         "$mod, J, togglesplit"
-        "$mod, V, exec, cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"
+        "$mod, V, exec, $clipboardHistory"
+        "$mod, D, exec, ${powerScript}/bin/power-manager"
 
         # Move focus
         "$mod, left, movefocus, l"
