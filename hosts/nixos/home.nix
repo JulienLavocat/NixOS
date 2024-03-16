@@ -12,6 +12,7 @@
     ../../modules/btop/module.nix
     ../../modules/neovim/module.nix
     ../../modules/firefox/module.nix
+    ../../modules/go/module.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -28,6 +29,7 @@
       (nerdfonts.override {fonts = ["FiraCode"];})
       discord
       spotify
+      godot_4
     ];
   };
 }
