@@ -117,6 +117,11 @@ in {
         gaps_out = 5;
       };
 
+      windowrulev2 = [
+        "workspace special:magic, title:^(.*Spotify.*)$"
+        "workspace special:magic, title:^(.*Discord.*)$"
+      ];
+
       exec-once = ''${startupScript}/bin/start'';
     };
   };
