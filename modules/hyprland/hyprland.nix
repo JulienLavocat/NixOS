@@ -106,6 +106,11 @@ in {
         kb_layout = "fr";
         kb_variant = "azerty";
         numlock_by_default = true;
+
+        follow_mouse = 1;
+
+        sensitivity = 0.15;
+        accel_profile = "flat";
       };
 
       general = {
