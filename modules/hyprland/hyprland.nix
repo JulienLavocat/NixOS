@@ -6,7 +6,7 @@
   '';
 
   powerScript = pkgs.pkgs.writeShellScriptBin "power-manager" ''
-    entries="󰗽 Logout\n󰒲 Suspend\n󰜉 Reboot\n󰐥 Shutdown"
+    entries="󰜉 Reboot\n󰐥 Shutdown\n󰗽 Logout\n󰒲 Suspend"
 
     selected=$(echo -e $entries | rofi -dmenu | awk '{print tolower($2)}')
 
