@@ -13,6 +13,7 @@
     ../../modules/neovim/module.nix
     ../../modules/firefox/module.nix
     ../../modules/go/module.nix
+    ../../modules/rust/module.nix
   ];
 
   fonts.fontconfig.enable = true;
