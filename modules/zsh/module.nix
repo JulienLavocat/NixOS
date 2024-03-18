@@ -33,11 +33,11 @@
     '';
 
     shellAliases = {
-      rebuild = "git add -A && alejandra /etc/nixos && sudo nixos-rebuild switch --flake /etc/nixos";
+      rebuild = "cd /etc/nixos && git add -A && alejandra /etc/nixos && sudo nixos-rebuild switch --flake /etc/nixos";
       editnix = "cd /etc/nixos && nvim && alejandra .";
       edithypr = "nvim ~/.config/hypr/hyprland.conf";
       editnvim = "cd ~/.config/nvim && nvim";
-      collectgarbage = "nix-store --gc && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+      nixclean = "nix-store --gc && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
     };
   };
 

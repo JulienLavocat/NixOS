@@ -31,6 +31,7 @@
       spotify
       godot_4
       glxinfo
+      (pkgs.callPackage ../../derivations/spacetimedb/module.nix {})
     ];
   };
 }
