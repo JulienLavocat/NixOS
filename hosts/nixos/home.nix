@@ -30,6 +30,7 @@
       discord
       spotify
       godot_4
+      glxinfo
     ];
   };
 }

@@ -33,4 +33,6 @@
     useGlobalPkgs = true;
     users = {"julien" = import ./home.nix;};
   };
+
+  virtualisation.docker.enable = true;
 }
