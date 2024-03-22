@@ -8,7 +8,7 @@
     settings = {
       import = ["~/.config/alacritty/themes/theme.toml"];
 
-      font = {size = 12;};
+      font = {size = 13;};
       font.normal = {
         family = "FiraCode Nerd Font Mono";
         style = "Regular";
