@@ -3,6 +3,11 @@
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.swww}/bin/swww init &
     ${pkgs.wl-clipboard}/bin/wl-paste --watch cliphist store &
+    ${pkgs.discord}/bin/discord &
+    ${pkgs.spotify}/bin/spotify &
+    hyprctl dispatch workspace 1
+    ${pkgs.alacritty}/bin/alacritty &
+    ${pkgs.firefox}/bin/firefox &
   '';
 
   powerScript = pkgs.pkgs.writeShellScriptBin "power-manager" ''
@@ -127,6 +132,7 @@ in {
       windowrulev2 = [
         "workspace special:magic, title:^(.*Spotify.*)$"
         "workspace special:magic, title:^(.*Discord.*)$"
+        "workspace 2, title:^(.*Firefox.*)$"
       ];
 
       exec-once = ''${startupScript}/bin/start'';
