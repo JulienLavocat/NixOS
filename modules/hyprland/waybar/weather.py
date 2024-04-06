@@ -28,7 +28,7 @@ WEATHER_ICON = {
 }
 
 data = {}
-apiKey = "3d1b48ebf230537fb3cf5c19ff029cb0"
+apiKey = "changeMe"
 lat = "45.2199"
 lon = "5.7901"
 try:
