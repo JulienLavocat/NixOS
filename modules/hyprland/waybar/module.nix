@@ -21,10 +21,6 @@
       executable = true;
     };
 
-    ".config/waybar/rectangle.vsg" = {
-      source = ./rectangle.svg;
-    };
-
     ".config/waybar/style.css" = {
       source = ./style.css;
     };
@@ -36,14 +32,16 @@
       {
         layer = "top";
         position = "top";
-        height = 40;
-        # width = 1900;
-        margin-bottom = 5;
+        height = 52;
         spacing = 0;
         fixed-center = true;
         exclusive = true;
         passthrough = true;
         gtk-layer-shell = true;
+        margin-top = 5;
+        margin-bottom = 5;
+        margin-left = 10;
+        margin-right = 10;
 
         modules-left = [
           "hyprland/workspaces"
@@ -56,20 +54,14 @@
         ];
 
         modules-right = [
-          "memory"
           "cpu"
+          "memory"
           "disk"
           "temperature"
           "pulseaudio"
           "network"
-          "keyboard-state"
           "tray"
         ];
-
-        "image#sprite1" = {
-          path = "~/.config/waybar/rectangle.svg";
-          size = 40;
-        };
 
         "custom/media" = {
           format = "{icon} {}";
@@ -82,7 +74,7 @@
           on-scroll-up = "playerctl next";
           on-scroll-down = "playerctl previous";
           format-icons = {
-            spotify = "";
+            spotify = " ";
             default = "🎜";
           };
           exec = "$HOME/.config/waybar/mediaplayer.py";
@@ -92,8 +84,8 @@
           format = " {}";
           tooltip = true;
           interval = 600;
-          on-click = "$HOME/.config/waybar/weather.py && notify-send 'Updated weather!'";
-          exec = "$HOME/.config/waybar/mediaplayer.py";
+          on-click = "$HOME/.config/waybar/weather.py && notify-send 'Weather updated'";
+          exec = "$HOME/.config/waybar/weather.py";
           return-type = "json";
         };
 

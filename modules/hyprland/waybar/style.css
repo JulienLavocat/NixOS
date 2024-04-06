@@ -1,7 +1,6 @@
 * {
   font-family: "JetBrainsMono Nerd Font";
   font-size: 17px;
-  /* font-weight: bold; */
   border-radius: 0px;
   margin: 0;
 }
@@ -9,8 +8,6 @@
 window#waybar {
   background-color: transparent;
   border-radius: 10px;
-  padding-top: 0px;
-  margin-top: 0;
 }
 
 .modules-right {
@@ -18,7 +15,7 @@ window#waybar {
   background-color: #45403d;
   border-radius: 10px;
   padding: 0;
-  margin: 5 0 5 0;
+  margin: 5px 0px 5px 0px;
 }
 
 .modules-left {
@@ -32,7 +29,7 @@ window#waybar {
 
 .modules-center {
   padding: 0px;
-  margin: 5 0 5 0;
+  margin: 5px 0px 5px 0px;
 }
 
 tooltip {
@@ -83,7 +80,7 @@ tooltip * {
 
 #clock,
 #custom-weather,
-#custom-updates {
+#custom-media {
   font-family: "GE Inspira";
   font-weight: bolder;
   text-shadow: 0 0 5px rgb(0, 0, 0);
@@ -93,29 +90,17 @@ tooltip * {
 
 #clock {
   padding: 0 0 0 1.5em;
-  border-radius: 10 0 0 10;
+  border-radius: 10px 0px 0px 10px;
 }
 
-#custom-updates {
-  padding-left: 1rem;
-}
-
-#custom-show_taskbar {
-  padding-left: 1rem;
-}
 #custom-weather {
-  padding: 0 1.5em 0 0.3em;
-  border-radius: 0 10 10 0;
+  padding: 0 1.3em 0 0.3em;
+  border-radius: 0px 10px 10px 0px;
 }
 
-#custom-spotify {
-  padding: 0 0 0 1.5em;
-  border-radius: 10 0 0 10;
-}
-#memory {
-  color: #a9b665;
-  padding: 0 0.3em 0 0.5em;
-  border-radius: 10 0 0 10;
+#custom-media {
+  padding: 0 1rem 0 1rem;
+  border-radius: 0 10px 10px 0;
 }
 
 #pulseaudio {
@@ -124,53 +109,36 @@ tooltip * {
   color: #d8a657;
 }
 
-#backlight {
-  margin: 0;
-  padding: 0 0.5em 0 0.4em;
-  color: #d8a657;
-}
-
 #cpu {
   margin: 0;
+  padding: 0 0.1em 0 0.5em;
+  color: #a9b665;
+}
+
+#memory {
+  color: #a9b665;
+  border-radius: 10px 0px 0px 10px;
   padding: 0 0.1em 0 0.1em;
+}
+
+#disk {
+  margin: 0;
+  padding: 0 0.5em 0 0.1em;
   color: #a9b665;
 }
 
 #network {
   margin: 0;
-  padding: 0 0.4em 0 0.5em;
-  color: #d8a657;
-}
-
-#custom-cycle_wall {
-  margin: 0;
-  padding: 0 0.5em;
-  color: #d3869b;
-}
-
-#language {
-  margin: 0;
-  padding: 0 0.1em;
-  color: #d3869b;
+  padding: 0 0.5em 0 0.5em;
+  color: #b16286;
 }
 
 #tray {
   margin: 0;
   padding-right: 10px;
   color: #d3869b;
-  border-radius: 0 10 10 0;
-}
-
-#battery {
-  margin: 0;
-  padding: 0 0.5em 0 0.8em;
-  color: #a9b665;
-}
-
-#disk {
-  margin: 0;
-  padding: 0 0.1em 0 0.1em;
-  color: #a9b665;
+  border-radius: 0px 10px 10px 0px;
+  padding: 0 0.5em 0 0.5em;
 }
 
 #window {

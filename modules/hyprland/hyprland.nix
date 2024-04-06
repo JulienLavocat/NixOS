@@ -114,7 +114,7 @@ in {
       };
 
       general = {
-        gaps_out = 5;
+        gaps_out = "0,5,5,5";
       };
 
       windowrulev2 = [

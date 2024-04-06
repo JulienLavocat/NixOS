@@ -40,7 +40,6 @@ except ConnectionError:
     data["text"] = " 😭 "
     print(json.dumps(data))
 finally:
-    print(weather)
     data["text"] = (
         WEATHER_ICON[weather["weather"][0]["icon"]]
         + "  "
