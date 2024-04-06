@@ -36,8 +36,6 @@
         spacing = 0;
         fixed-center = true;
         exclusive = true;
-        passthrough = true;
-        gtk-layer-shell = true;
         margin-top = 5;
         margin-bottom = 5;
         margin-left = 10;
@@ -81,7 +79,7 @@
         };
 
         "custom/weather" = {
-          format = " {}";
+          format = "{}";
           tooltip = true;
           interval = 600;
           on-click = "$HOME/.config/waybar/weather.py && notify-send 'Weather updated'";
@@ -103,27 +101,17 @@
           min-length = 6;
         };
 
-        keyboard-state = {
-          numlock = true;
-          capslock = true;
-          format = "{name} {icon}";
-          format-icons = {
-            locked = "";
-            unlocked = "";
-          };
-        };
-
         clock = {
           tooltip = true;
-          tooltip-format = "{: %A, %B %e %Y}";
-          interval = 60;
-          format = "   {:%H:%M}";
+          tooltip-format = "{: %Ec}";
+          interval = 1;
+          format = "  {:%T}";
           max-length = 25;
         };
 
         cpu = {
-          interval = 1;
-          format = "{usage}% {icon0}{icon1}{icon2}{icon3}";
+          interval = 3;
+          format = "{usage}% {icon0}{icon1}{icon2}{icon3}{icon4}";
           format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           on-click = "alacritty --class system_monitor -e btop";
           max-lenght = 25;

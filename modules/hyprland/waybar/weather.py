@@ -40,14 +40,9 @@ except ConnectionError:
     data["text"] = " 😭 "
     print(json.dumps(data))
 finally:
-    data["text"] = (
-        WEATHER_ICON[weather["weather"][0]["icon"]]
-        + "  "
-        + str(int(weather["main"]["temp"]))
-        + "°"
-    )
+    data["text"] = f"{WEATHER_ICON[weather['weather'][0]['icon']]}{str(int(weather['main']['temp']))}°C" 
     data[
         "tooltip"
-    ] = f"<b> {WEATHER_ICON[weather['weather'][0]['icon']]} {weather['weather'][0]['description']} </b>\n"
+    ] = f"<b> {WEATHER_ICON[weather['weather'][0]['icon']]}{weather['weather'][0]['description']} </b>\n"
     data["tooltip"] += f"Feels like {str(int(weather['main']['feels_like']))}° Your City here"
     print(json.dumps(data))
