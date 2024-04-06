@@ -32,7 +32,7 @@
         line_height = 2;
         markup = "full";
         origin = "top-right";
-        offset = "10x10";
+        offset = "25x10";
         format = "<b>%s</b>\n%b";
         alignment = "left";
         show_age_threshold = 60;
