@@ -42,17 +42,17 @@ in {
       "$takeScreenshot" = "grim -g \"$(slurp)\" $HOME/Screenshots/$(date +'%s.png')";
 
       bind = [
-        "$mod, F, exec, firefox"
-        "$mod, M, exit"
-        "$mod, Q, exec, $terminal"
         "$mod, C, killactive"
         "$mod, E, exec, $fileManager"
-        "$mod, K, togglefloating"
-        "$mod, R, exec, $menu"
-        "$mod, P, pseudo"
+        "$mod, F, exec, firefox"
         "$mod, J, togglesplit"
+        "$mod, K, togglefloating"
+        "$mod, P, pseudo"
+        "$mod, Q, exec, $terminal"
+        "$mod, R, exec, $menu"
+        "$mod, M, exit"
         "$mod, V, exec, $clipboardHistory"
-        "$mod, D, exec, ${powerScript}/bin/power-manager"
+        "$mod, X, exec, ${powerScript}/bin/power-manager"
         ",Print, exec, $takeScreenshot"
 
         # Move focus
@@ -85,9 +85,11 @@ in {
         "$mod SHIFT, ccedilla, movetoworkspace, 9"
         "$mod SHIFT, agrave, movetoworkspace, 10"
 
-        # Scratchpad workspace (Spotify, Discord, ...)
-        "$mod, S, togglespecialworkspace, magic"
-        "$mod SHIFT, S, movetoworkspace, special:magic"
+        # Special workspaces (hub -> Discord, Spotify), (scratchpad -> Obsidian)
+        "$mod, D, togglespecialworkspace, hub"
+        "$mod SHIFT, D, movetoworkspace, special:hub"
+        "$mod, S, togglespecialworkspace, scratchpad"
+        "$mod SHIFT, S, movetoworkspace, special:scratchpad"
 
         # Mute audio
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -132,8 +134,8 @@ in {
       };
 
       windowrulev2 = [
-        "workspace special:magic, title:^(.*Spotify.*)$"
-        "workspace special:magic, title:^(.*Discord.*)$"
+        "workspace special:hub, title:^(.*Spotify.*)$"
+        "workspace special:hub, title:^(.*Discord.*)$"
         "workspace 2, title:^(.*Firefox.*)$"
       ];
 
