@@ -2,7 +2,7 @@
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
     ${pkgs.waybar}/bin/waybar &
     ${pkgs.swww}/bin/swww init &
-    ${pkgs.wl-clipboard}/bin/wl-paste --watch cliphist store
+    ${pkgs.wl-clipboard}/bin/wl-paste --watch cliphist store &
   '';
 
   powerScript = pkgs.pkgs.writeShellScriptBin "power-manager" ''

@@ -28,7 +28,7 @@
     stateVersion = "23.11";
 
     packages = with pkgs; [
-      (nerdfonts.override {fonts = ["FiraCode"];})
+      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
       discord
       spotify
       godot_4
