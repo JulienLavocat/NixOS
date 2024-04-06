@@ -39,6 +39,7 @@ in {
       "$fileManager" = "krusader";
       "$menu" = "rofi -show drun -show-icons";
       "$clipboardHistory" = "cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy";
+      "$takeScreenshot" = "grim -g \"$(slurp)\" $HOME/Screenshots/$(date +'%s.png')";
 
       bind = [
         "$mod, F, exec, firefox"
@@ -52,6 +53,7 @@ in {
         "$mod, J, togglesplit"
         "$mod, V, exec, $clipboardHistory"
         "$mod, D, exec, ${powerScript}/bin/power-manager"
+        ",Print, exec, $takeScreenshot"
 
         # Move focus
         "$mod, left, movefocus, l"
