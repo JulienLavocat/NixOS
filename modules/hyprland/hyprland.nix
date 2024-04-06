@@ -114,7 +114,14 @@ in {
       };
 
       general = {
-        gaps_out = "0,5,5,5";
+        gaps_out = "0,7,7,7";
+        border_size = 0;
+        "col.active_border" = "rgba(D4BE98FF)";
+        "col.inactive_border" = "rgba(ebdbb211)";
+      };
+
+      decoration = {
+        rounding = 10;
       };
 
       windowrulev2 = [
