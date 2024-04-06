@@ -15,6 +15,7 @@
     ../../modules/go/module.nix
     ../../modules/rust/module.nix
     ../../modules/zoxide/module.nix
+    ../../modules/neofetch/module.nix
   ];
 
   fonts.fontconfig.enable = true;
