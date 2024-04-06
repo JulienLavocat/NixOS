@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./waybar/module.nix
-    ./dunst.nix
+    ./dunst/module.nix
     ./hyprland.nix
   ];
 
