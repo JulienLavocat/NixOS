@@ -14,6 +14,7 @@
     ../../modules/firefox/module.nix
     ../../modules/go/module.nix
     ../../modules/rust/module.nix
+    ../../modules/zoxide/module.nix
   ];
 
   fonts.fontconfig.enable = true;

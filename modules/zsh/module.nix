@@ -38,6 +38,7 @@
       edithypr = "nvim ~/.config/hypr/hyprland.conf";
       editnvim = "cd ~/.config/nvim && nvim";
       nixclean = "nix-store --gc && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+      cd = "z";
     };
   };
 
