@@ -5,6 +5,7 @@
     kubectx
     k9s
     stern
+    fluxcd
   ];
 
   programs.zsh = {
