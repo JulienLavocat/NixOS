@@ -16,6 +16,7 @@
     ../../modules/rust/module.nix
     ../../modules/zoxide/module.nix
     ../../modules/neofetch/module.nix
+    ../../modules/kubernetes/module.nix
   ];
 
   fonts.fontconfig.enable = true;
