@@ -6,6 +6,7 @@
     k9s
     stern
     fluxcd
+    sops
   ];
 
   programs.zsh = {
