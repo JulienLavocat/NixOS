@@ -7,6 +7,7 @@
     stern
     fluxcd
     sops
+    gnupg
   ];
 
   programs.zsh = {
