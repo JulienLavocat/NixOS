@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    neovim
     volta
     nodejs_20
     python3
@@ -8,4 +7,16 @@
     ripgrep
     lazygit
   ];
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
+  programs.zsh = {
+    enable = true;
+    initExtra = ''
+      export EDITOR=nvim
+    '';
+  };
 }

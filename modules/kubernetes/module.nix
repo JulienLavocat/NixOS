@@ -14,6 +14,8 @@
     enable = true;
     shellAliases = {
       k = "kubectl";
+      senc = "sops --encrypt --in-place";
+      sdec = "sops --decrypt --in-place";
     };
   };
 }
