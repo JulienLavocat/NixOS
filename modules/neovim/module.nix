@@ -1,7 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    volta
-    nodejs_20
     python3
     go
     ripgrep

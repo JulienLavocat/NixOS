@@ -18,6 +18,7 @@
     ../../modules/neofetch/module.nix
     ../../modules/kubernetes/module.nix
     ../../modules/dev-tools/module.nix
+    ../../modules/volta/module.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -37,8 +38,6 @@
       godot_4
       glxinfo
       (pkgs.callPackage ../../derivations/spacetimedb/module.nix {})
-      steam-run
-      yarn
     ];
   };
 }
