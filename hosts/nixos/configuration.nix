@@ -38,6 +38,10 @@
 
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [stdenv.cc.cc openssl];
+    libraries = with pkgs; [
+      stdenv.cc.cc
+      openssl
+      glib
+   ];
   };
 }
