@@ -20,6 +20,7 @@
     ../../modules/dev-tools/module.nix
     ../../modules/volta/module.nix
     ../../modules/playwright/module.nix
+    ../../modules/obsidian/module.nix
   ];
 
   fonts.fontconfig.enable = true;
