@@ -3,5 +3,6 @@
     jq
     curl
     wget
+    dbeaver
   ];
 }

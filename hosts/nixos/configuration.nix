@@ -42,6 +42,6 @@
       stdenv.cc.cc
       openssl
       glib
-   ];
+    ];
   };
 }
