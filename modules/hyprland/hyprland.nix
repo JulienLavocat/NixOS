@@ -8,6 +8,7 @@
     hyprctl dispatch workspace 1
     ${pkgs.alacritty}/bin/alacritty &
     ${pkgs.firefox}/bin/firefox &
+    ${pkgs.obsidian}/bin/obsidian &
   '';
 
   powerScript = pkgs.pkgs.writeShellScriptBin "power-manager" ''
@@ -136,6 +137,7 @@ in {
       windowrulev2 = [
         "workspace special:hub, title:^(.*Spotify.*)$"
         "workspace special:hub, title:^(.*Discord.*)$"
+        "workspace special:scratchpad, title:^(.*Obsidian.*)$"
         "workspace 2, title:^(.*Firefox.*)$"
       ];
 
