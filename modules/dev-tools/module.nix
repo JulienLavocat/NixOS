@@ -3,7 +3,7 @@
     jq
     curl
     wget
-    hoppscotch
     dbeaver
+    insomnia
   ];
 }
