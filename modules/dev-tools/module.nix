@@ -3,6 +3,7 @@
     jq
     curl
     wget
+    hoppscotch
     dbeaver
   ];
 }
