@@ -21,6 +21,7 @@
     ../../modules/volta/module.nix
     ../../modules/playwright/module.nix
     ../../modules/obsidian/module.nix
+    ../../modules/godot4-mono/default.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -37,7 +38,6 @@
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
       discord
       spotify
-      godot_4
       glxinfo
       (pkgs.callPackage ../../derivations/spacetimedb/module.nix {})
     ];
