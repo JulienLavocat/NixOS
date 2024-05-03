@@ -40,6 +40,7 @@
   mono,
   dotnet-runtime,
   callPackage,
+  pkgs,
 }:
 assert lib.asserts.assertOneOf "withPrecision" withPrecision ["single" "double"]; let
   mkSconsFlagsFromAttrSet = lib.mapAttrsToList (k: v:
@@ -49,8 +50,8 @@ assert lib.asserts.assertOneOf "withPrecision" withPrecision ["single" "double"]
 in
   stdenv.mkDerivation rec {
     pname = "godot4-mono";
-    version = "4.2.1-stable";
-    commitHash = "b09f793f564a6c95dc76acc654b390e68441bd01";
+    version = "4.3.5-rc";
+    commitHash = "89f70e98d209563abb4dbc1f8cd5d76c81eb7940";
 
     nugetDeps = mkNugetDeps {
       name = "deps";
@@ -78,7 +79,7 @@ in
       owner = "godotengine";
       repo = "godot";
       rev = commitHash;
-      hash = "sha256-Q6Og1H4H2ygOryMPyjm6kzUB6Su6T9mJIp0alNAxvjQ";
+      hash = "sha256-uhgF0iZbiCJkCCklUWDbuHGQBoif3fLjjx6JeqpkCnI=";
     };
 
     nativeBuildInputs = [
@@ -87,8 +88,8 @@ in
       installShellFiles
       python3
       mono
-      dotnet-sdk
-      dotnet-runtime
+      pkgs.dotnet-sdk_8
+      pkgs.dotnet-runtime_8
     ];
 
     buildInputs = [
@@ -110,8 +111,8 @@ in
         libxkbcommon
         alsa-lib
         mono
-        dotnet-sdk
-        dotnet-runtime
+        pkgs.dotnet-sdk_8
+        pkgs.dotnet-runtime_8
       ]
       ++ lib.optional withPulseaudio libpulseaudio
       ++ lib.optional withDbus dbus
