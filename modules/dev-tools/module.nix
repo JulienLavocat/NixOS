@@ -6,5 +6,6 @@
     dbeaver
     insomnia
     jdk
+    gnumake
   ];
 }
