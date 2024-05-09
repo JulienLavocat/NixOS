@@ -34,6 +34,8 @@
     users = {"julien" = import ./home.nix;};
   };
 
+  time.hardwareClockInLocalTime = true;
+
   virtualisation.docker.enable = true;
 
   programs.nix-ld = {
