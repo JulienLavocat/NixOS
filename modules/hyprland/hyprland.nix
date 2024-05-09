@@ -30,7 +30,10 @@
     esac
   '';
 in {
-  home.packages = with pkgs; [hyprland];
+  home.packages = with pkgs; [
+    hyprland
+    xorg.xlsclients
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -46,6 +49,7 @@ in {
         "$mod, C, killactive"
         "$mod, E, exec, $fileManager"
         "$mod, F, exec, firefox"
+        "$mod SHIFT, F, fullscreen, 1"
         "$mod, J, togglesplit"
         "$mod, K, togglefloating"
         "$mod, P, pseudo"
