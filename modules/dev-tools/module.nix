@@ -7,5 +7,6 @@
     insomnia
     jdk
     gnumake
+    protobuf
   ];
 }
