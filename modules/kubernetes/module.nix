@@ -8,6 +8,7 @@
     fluxcd
     sops
     gnupg
+    kubernetes-helm
   ];
 
   programs.zsh = {
