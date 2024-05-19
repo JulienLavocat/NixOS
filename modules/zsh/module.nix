@@ -46,6 +46,10 @@
       editnvim = "cd ~/.config/nvim && nvim";
       nixclean = "nix-store --gc && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       cd = "z";
+      b64e = "echo -n $1 | base64 -w 0";
+      b64d = "echo -n $1 | base64 -d";
+      sopse = "sops -i -e $1";
+      sopsd = "sops -i -d $1";
     };
   };
 

@@ -8,5 +8,6 @@
     jdk
     gnumake
     protobuf
+    act
   ];
 }
