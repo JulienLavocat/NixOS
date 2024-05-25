@@ -11,8 +11,17 @@
     ../../modules/git/module.nix
     ../../modules/btop/module.nix
     ../../modules/neovim/module.nix
+    ../../modules/firefox/module.nix
+    ../../modules/go/module.nix
+    ../../modules/rust/module.nix
     ../../modules/zoxide/module.nix
+    ../../modules/neofetch/module.nix
+    ../../modules/kubernetes/module.nix
+    ../../modules/dev-tools/module.nix
     ../../modules/volta/module.nix
+    ../../modules/playwright/module.nix
+    ../../modules/obsidian/module.nix
+    ../../modules/godot4-mono/default.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -27,6 +36,8 @@
 
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      discord
+      spotify
       glxinfo
       (pkgs.callPackage ../../derivations/spacetimedb/module.nix {})
     ];
