@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ../../modules/hyprland/module.nix
     ../../modules/tmux/module.nix
     ../../modules/alacritty/module.nix
     ../../modules/zsh/module.nix

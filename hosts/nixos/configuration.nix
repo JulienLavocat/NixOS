@@ -13,9 +13,9 @@
     ../../modules/nixos/locale/module.nix
     ../../modules/nixos/nvidia/module.nix
     ../../modules/nixos/networking/module.nix
-    ../../modules/nixos/hyprland/module.nix
     ../../modules/nixos/users/module.nix
     ../../modules/nixos/shell/module.nix
+    ../../modules/gnome/module.nix
   ];
 
   nix = {

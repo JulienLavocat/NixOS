@@ -28,9 +28,9 @@
     initExtra = ''
       source $HOME/.p10k.zsh
 
-      if [ -z "''${WAYLAND_DISPLAY}" ] && [ "''${XDG_VTNR}" -eq 1 ]; then
-        dbus-run-session Hyprland
-      fi
+      # if [ -z "''${WAYLAND_DISPLAY}" ] && [ "''${XDG_VTNR}" -eq 1 ]; then
+        # dbus-run-session Hyprland
+      # fi
 
 
       if [ -z "$TMUX" ]
@@ -42,7 +42,7 @@
     shellAliases = {
       rebuild = "cd /etc/nixos && git add -A && alejandra /etc/nixos && sudo nixos-rebuild switch --flake /etc/nixos";
       editnix = "cd /etc/nixos && nvim && alejandra .";
-      edithypr = "nvim ~/.config/hypr/hyprland.conf";
+      # edithypr = "nvim ~/.config/hypr/hyprland.conf";
       editnvim = "cd ~/.config/nvim && nvim";
       nixclean = "nix-store --gc && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       cd = "z";
