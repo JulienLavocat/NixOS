@@ -36,10 +36,11 @@
 
     packages = with pkgs; [
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      (pkgs.callPackage ../../derivations/spacetimedb/module.nix {})
       discord
       spotify
       glxinfo
-      (pkgs.callPackage ../../derivations/spacetimedb/module.nix {})
+      openssl
     ];
   };
 }
