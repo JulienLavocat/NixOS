@@ -15,6 +15,7 @@
     ../../modules/nixos/networking/module.nix
     ../../modules/nixos/users/module.nix
     ../../modules/nixos/shell/module.nix
+    ../../modules/nixos/printers/module.nix
     ../../modules/gnome/module.nix
   ];
 
