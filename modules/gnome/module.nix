@@ -35,4 +35,6 @@
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
   };
+
+  environment.systemPackages = with pkgs; [xclip];
 }
