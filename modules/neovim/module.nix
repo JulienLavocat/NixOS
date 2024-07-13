@@ -4,6 +4,7 @@
     go
     ripgrep
     lazygit
+    gcc
   ];
 
   programs.neovim = {
